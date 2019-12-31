@@ -21,6 +21,12 @@ class ApiClient {
     });
   }
 
+  update = (url, params) => {
+    return this.api.put(url + this.buildQueryString(params)).then(res => {
+      return res.data;
+    });
+  }
+
   post = (url, params) => {
     return this.api.post(url + this.buildQueryString(params)).then(res => {
       return res.data;

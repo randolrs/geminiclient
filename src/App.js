@@ -3,13 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import Signup from './app/Signup';
+import Update from './app/Update';
 
 import { getIsLoggedIn, logout, login } from './api/auth';
 
 const loginUser = async () => {
   const loginParams = {
-    userEmail: 'r.shane.randolph@gmail.com',
-    password: 'xxx',
+    email: 'r.shane.randolph@gmail.com',
+    password: 'Secure10',
   };
 
   await login(loginParams);
@@ -21,6 +22,7 @@ function App() {
       <header className="App-header">
       <p onClick={ loginUser }>Login</p>
       <p onClick={ getIsLoggedIn }>Is Logged In</p>
+      <p onClick={ logout }>Logout</p>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -34,6 +36,7 @@ function App() {
           Learn React
         </a>
         <Signup />
+        <Update />
       </header>
     </div>
   );
