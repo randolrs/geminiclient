@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { signupUser } from '../redux/action';
 
-import { signup } from '../api/auth';
 
-
-const Signup = () => {
+const Signup = ({ signupUser }) => {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ passwordConfirmation, setPasswordConfirmation ] = useState('');
 
   const handleSumbit = async () => {
-    const res = await signup({
+    const res = await signupUser({
       email,
       password,
       passwordConfirmation
@@ -52,4 +52,6 @@ const Signup = () => {
   );
 }
 
-export default Signup;
+export default connect(null, {
+  signupUser,
+})(Signup);

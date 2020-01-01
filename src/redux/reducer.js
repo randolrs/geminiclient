@@ -3,6 +3,7 @@ import ACTIONS from './action';
 const defaultState = {
   isUserLoggedIn: false,
   currentUser: {},
+  authErrors: [],
 };
 
 const sampleReducer = (state = defaultState, action) => {
@@ -16,11 +17,20 @@ const sampleReducer = (state = defaultState, action) => {
       return newState;
     }
 
-    case ACTIONS.Types.LOGIN: {
+    case ACTIONS.Types.SET_USER: {
       let newState = {
         ...state,
         currentUser: action.payload,
         isUserLoggedIn: true,
+      };
+
+      return newState;
+    }
+
+    case ACTIONS.Types.SET_AUTH_ERRORS: {
+      let newState = {
+        ...state,
+        authErrors: action.payload
       };
 
       return newState;

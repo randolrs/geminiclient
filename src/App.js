@@ -1,27 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import logo from './logo.svg';
 import './App.css';
 
 import Signup from './app/Signup';
 import Update from './app/Update';
 
-import { getIsLoggedIn, logout, login } from './api/auth';
+import { loginUser, logoutUser } from './redux/action';
 
-const loginUser = async () => {
-  const loginParams = {
-    email: 'r.shane.randolph@gmail.com',
-    password: 'Secure10',
+const App = ({ loginUser, logoutUser }) => {
+  const login = async () => {
+    const loginParams = {
+      email: 'r.shane.randolph@gmail.com',
+      password: 'Secure10',
+    };
+
+    await loginUser(loginParams);
   };
 
-  await login(loginParams);
-};
+  const logout = async () => {
+    await logoutUser();
+  }
 
-function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <p onClick={ loginUser }>Login</p>
-      <p onClick={ getIsLoggedIn }>Is Logged In</p>
+      <p onClick={ login }>Login</p>
+      <p onClick={ null
+        // getIsLoggedIn
+      }>Is Logged In</p>
       <p onClick={ logout }>Logout</p>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -42,4 +50,7 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, {
+  loginUser,
+  logoutUser
+})(App);
