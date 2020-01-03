@@ -13,7 +13,7 @@ const Types = {
   SET_AUTH_ERRORS: 'SET_AUTH_ERRORS',
 };
 
-export const updateIsLoggedIn = (payload) => {
+export const updateIsLoggedIn = () => {
   return getIsLoggedIn().then(isLoggedIn => {
     return {
       type: Types.UPDATE_IS_LOGGED_IN,

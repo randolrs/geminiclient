@@ -13,7 +13,7 @@ const Nav = ({ isUserLoggedIn, currentUser, loginUser, logoutUser }) => {
   const login = async () => {
     await loginUser({
       email: 'r.shane.randolph@gmail.com',
-      password: 'Secure10',
+      password: 'xxx',
     });
   };
 
