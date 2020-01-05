@@ -10,11 +10,8 @@ const NAV_LINE_HEIGHT = 30;
 
 const Nav = ({ isUserLoggedIn, currentUser, loginUser, logoutUser }) => {
 
-  const login = async () => {
-    await loginUser({
-      email: 'r.shane.randolph@gmail.com',
-      password: 'xxx',
-    });
+  const goToLogin = async () => {
+    window.location = '/login';
   };
 
   const logout = async () => {
@@ -40,7 +37,7 @@ const Nav = ({ isUserLoggedIn, currentUser, loginUser, logoutUser }) => {
           <>
             <span
               className="link"
-              onClick={ login }
+              onClick={ goToLogin }
             >Login</span>
             <span className="link">Signup</span>
           </>
@@ -65,7 +62,7 @@ export default connect(mapStateToProps, {
 const NavContainer = styled.div`
   height: ${ NAV_HEIGHT }px;
   width: 100%;
-  background: #dddddd;
+  background: #fff;
   position: fixed;
   top: 0px;
   left: 0px;

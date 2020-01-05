@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { signupUser } from '../redux/action';
 
-
 const Signup = ({ signupUser }) => {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');

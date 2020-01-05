@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
 import { updateUser } from '../api/auth';
-
 
 const Update = () => {
   const [ email, setEmail ] = useState('');
