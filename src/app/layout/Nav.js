@@ -14,6 +14,10 @@ const Nav = ({ isUserLoggedIn, currentUser, loginUser, logoutUser }) => {
     window.location = '/login';
   };
 
+  const goToSignup = async () => {
+    window.location = '/signup';
+  };
+
   const logout = async () => {
     await logoutUser();
   };
@@ -39,7 +43,10 @@ const Nav = ({ isUserLoggedIn, currentUser, loginUser, logoutUser }) => {
               className="link"
               onClick={ goToLogin }
             >Login</span>
-            <span className="link">Signup</span>
+            <span
+              className="link"
+              onClick={ goToSignup }
+            >Signup</span>
           </>
       }
       </div>

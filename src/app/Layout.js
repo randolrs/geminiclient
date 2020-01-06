@@ -9,7 +9,8 @@ import Nav from './layout/Nav';
 import ContentBody from './layout/ContentBody';
 import Footer from './layout/Footer';
 
-import Login from './auth/Login';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const Layout = () => {
   return (
@@ -19,6 +20,7 @@ const Layout = () => {
         <Router basename="/">
           <Switch>
             <Route path={ '/login' } component={ Login } />
+            <Route path={ '/signup' } component={ Signup } />
             <Route path="*" render={() => {
               return <div>I see dead links</div>;
             }} />
